@@ -1,31 +1,34 @@
-const makeBurger = () => {
-  getBeef((beef) => {
-    cookBeef(beef, (cookedBeef) => {
-      getBuns((buns) => {
-        putBeefBetweenBuns(buns, beef, function (burger) {
-          // Serve the burger
+const getNewId = () => {
+  getMoneyInTheBank((visa) => {
+    getStamp(visa, (stamp) => {
+      getGraduationCertificate((certificate) => {
+        getTheID(visa, certificate, function (id) {
+          // Voalaaaa You have the new Identity
         });
       });
     });
   });
 };
-const makeBurger2 = () => {
-    getBeef().then(beef => {
-      return cookBeef(beef);
-    }).then(cookedBeef => {
-      return getBuns();
-    }).then(buns => {
-      return putBeefBetweenBuns(buns, beef);
-    }).then(burger => {
-      // Serve the burger
+const getNewId2 = () => {
+  getMoneyInTheBank()
+    .then((visa) => {
+      return getStamp(visa);
+    })
+    .then((stamp) => {
+      return getGraduationCertificate(stamp);
+    })
+    .then((certificate) => {
+      return getTheID(visa, certificate);
+    })
+    .then((id) => {
+      // Voalaaaa You have the new Identity
     });
-   };
+};
 
-   
-const makeBurger3 = async () => {
-  const beef = await getBeef();
-  const cookedBeef = await cookBeef(beef);
-  const buns = await getBuns();
-  const burger = await putBeefBetweenBuns(buns, beef);
-  // Serve the burger
+const getNewId3 = async () => {
+  const visa = await getMoneyInTheBank();
+  const stamp = await getStamp(visa);
+  const certificate = await getGraduationCertificate(stamp);
+  const id = await getTheID(visa, certificate);
+  // Voalaaaa You have the new Identity
 };
